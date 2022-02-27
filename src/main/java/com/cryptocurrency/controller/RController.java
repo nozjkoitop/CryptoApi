@@ -50,7 +50,7 @@ public class RController {
     @ApiOperation(value = "${CoinById}")
     @ApiResponses(value = {//
             @ApiResponse(code = 404, message = "Coin not found")})
-    public ResponseEntity<Coin> getCurrentCoin(@PathVariable int id) {
+    public ResponseEntity<Coin> getCurrentCoin(@PathVariable long id) {
         try {
             return ResponseEntity.ok(coinService.getCurrentCoin(id));
         } catch (CoinNotFoundException e) {

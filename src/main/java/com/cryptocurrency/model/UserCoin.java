@@ -15,7 +15,7 @@ public class UserCoin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @ManyToOne
     @JoinColumn(name = "coin")
     private Coin coin;

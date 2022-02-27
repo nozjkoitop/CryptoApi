@@ -19,7 +19,7 @@ public class CoinService {
     private final CoinRepository coinRepository;
     private final RestTemplate restTemplate;
 
-    public void updatePrice(int id) {
+    public void updatePrice(long id) {
         CoinResponseDTO[] forObject = restTemplate.getForObject("https://api.coinlore.net/api/ticker/?id=" + id, CoinResponseDTO[].class);
         assert forObject != null;
         if (forObject[0] != null) {

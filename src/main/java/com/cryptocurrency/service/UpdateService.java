@@ -17,14 +17,14 @@ import java.util.List;
 public class UpdateService {
 
     private static final Logger log = LoggerFactory.getLogger(UpdateService.class);
-    final int[] coinsId = {90, 80, 48543};
+    final long[] coinsId = {90, 80, 48543};
     @Autowired
     private final CoinService coinService;
     private final UserCoinRepository coins;
 
     @Scheduled(fixedRate = 60000)
     public void updateCoinPrices() {
-        for (int i : coinsId) {
+        for (long i : coinsId) {
             coinService.updatePrice(i);
         }
         printData();
